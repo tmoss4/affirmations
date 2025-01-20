@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Affirmations</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400&display=swap');
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+        }
+        .container {
+            background-color: white;
+            width: 880px;
+            height: 182px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        #affirmation {
+            font-size: 24px;
+            font-family: 'Raleway', sans-serif;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 18px;
+            font-family: 'Raleway', sans-serif;
+            cursor: pointer;
+            border: none;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="affirmation"></div>
+        <button onclick="changeAffirmation()">Change Affirmation</button>
+    </div>
+
+    <script>
+        const affirmations = [
+            "I can do anything that I set my mind to.",
+            "Challenges are opportunities to grow and improve.",
+            "I may not understand the good in this situation, but it is there.",
+            "I have touched and continue to touch many lives.",
+            "I am able to solve my problems creatively.",
+            "I will not stress over things I cannot control.",
+            "I execute my plan and produce expected results.",
+            "I am my best source of motivation.",
+            "I fully accept myself.",
+            "I love myself."
+        ];
+
+        const colors = [
+            "#673ab7",
+            "#cddc39",
+            "#ffeb3b",
+            "#ffc107",
+            "#f44336",
+            "#8bc34a",
+            "#4caf50",
+            "#2196f3"
+        ];
+
+        function changeAffirmation() {
+            const randomAffirmation = affirmations[Math.floor(Math.random() * affirmations.length)];
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            document.getElementById('affirmation').innerText = randomAffirmation;
+            document.getElementById('affirmation').style.color = randomColor;
+            document.body.style.backgroundColor = randomColor;
+            document.querySelector('button').style.backgroundColor = randomColor;
+        }
+
+        // Initialize with a random affirmation and color
+        changeAffirmation();
+    </script>
+</body>
+</html>
