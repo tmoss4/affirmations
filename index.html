@@ -20,18 +20,24 @@
         }
         .container {
             background-color: white;
-            width: 880px;
-            height: 182px;
+            max-width: 880px;
+            height: auto;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 20px;
+            padding: 15px;
+            margin: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            word-wrap: break-word;
+            border-radius: 5px;
+            box-sizing: border-box;
         }
         #affirmation {
             font-size: 24px;
             font-family: 'Raleway', sans-serif;
+            word-wrap: break-word;
+            max-width: 100%;
         }
         button {
             margin-top: 20px;
@@ -67,7 +73,6 @@
         const colors = [
             "#673ab7",
             "#cddc39",
-            "#ffeb3b",
             "#ffc107",
             "#f44336",
             "#8bc34a",
