@@ -17,28 +17,32 @@
             color: white;
             text-align: center;
         }
+
         .container {
             background-color: white;
-            max-width: 880px;
-            height: auto;
+            width: 880px;
+            min-height: 150px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             padding: 15px;
             margin: 10px;
+            margin-top: 100px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            word-wrap: break-word;
             border-radius: 5px;
             box-sizing: border-box;
-            margin-top: 100px; /* Adjust this value as needed */
         }
+
         #affirmation {
             font-size: 24px;
             font-family: 'Raleway', sans-serif;
-            word-wrap: break-word;
+            line-height: 1.4;
             max-width: 100%;
+            min-height: 40px;
+            overflow-wrap: break-word;
         }
+
         button {
             margin-top: 20px;
             padding: 10px 20px;
@@ -47,6 +51,12 @@
             cursor: pointer;
             border: none;
             color: white;
+        }
+
+        @media (max-width: 920px) {
+            .container {
+                width: calc(100% - 40px);
+            }
         }
     </style>
 </head>
@@ -72,7 +82,6 @@
 
         const colors = [
             "#673ab7",
-            "#cddc39",
             "#ffc107",
             "#f44336",
             "#8bc34a",
@@ -83,13 +92,13 @@
         function changeAffirmation() {
             const randomAffirmation = affirmations[Math.floor(Math.random() * affirmations.length)];
             const randomColor = colors[Math.floor(Math.random() * colors.length)];
+
             document.getElementById('affirmation').innerText = randomAffirmation;
             document.getElementById('affirmation').style.color = randomColor;
             document.body.style.backgroundColor = randomColor;
             document.querySelector('button').style.backgroundColor = randomColor;
         }
 
-        // Initialize with a random affirmation and color
         changeAffirmation();
     </script>
 </body>
